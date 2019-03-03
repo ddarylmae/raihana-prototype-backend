@@ -31,7 +31,7 @@
 				"CodeUri": "",
 				"MemorySize": 256,
 				"Timeout": 30,
-				"Role": "raihana-dev-default",
+				"Role": null,
 				"Policies": [ "AWSLambdaFullAccess" ],
 				"Environment" : {
 					"Variables" : {

@@ -27,7 +27,9 @@ namespace raihana
         protected override void Init(IWebHostBuilder builder)
         {
             builder
-                .UseStartup<Startup>();
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseStartup<Startup>()
+                .UseLambdaServer();
         }
     }
 }
