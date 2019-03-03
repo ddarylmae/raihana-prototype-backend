@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using raihana.Models;
 using raihana.Services;
+using System.Collections.Generic;
 
 namespace raihana.Controllers
 {
@@ -14,11 +15,16 @@ namespace raihana.Controllers
             _licenseDetailsService = licenseDetailsService;
         }
 
-        [HttpGet("{id}")]
-        [Route("/getinfo")]
-        public License GetLicenseInfo(string id)
+        [HttpGet("{licenseId}")]
+        public License GetLicenseInfo(string licenseId)
         {
-            return _licenseDetailsService.GetLicenseDetails(id);
+            return _licenseDetailsService.GetLicenseDetails(licenseId);
+        }
+
+        [HttpGet]
+        public List<License> GetAllLicenses()
+        {
+            return _licenseDetailsService.GetAllLicenses();
         }
     }
 }
