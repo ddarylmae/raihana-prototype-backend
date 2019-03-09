@@ -20,11 +20,5 @@ namespace raihana.Controllers
         {
             return _licenseDetailsService.GetLicenseDetails(licenseId);
         }
-
-        [HttpGet]
-        public List<License> GetAllLicenses()
-        {
-            return _licenseDetailsService.GetAllLicenses();
-        }
     }
 }

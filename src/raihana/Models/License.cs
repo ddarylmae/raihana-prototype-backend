@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace raihana.Models
 {
@@ -8,12 +9,12 @@ namespace raihana.Models
         public string LicenseId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
         public string Email { get; set; }
         public string Gender { get; set; }
         public string Address { get; set; }
-        public DateTime Issued { get; set; }
-        public DateTime Expiry { get; set; }
+        public string Issued { get; set; }
+        public string Expiry { get; set; }
 
         public static License FromCsv(string csvLine)
         {
@@ -25,9 +26,9 @@ namespace raihana.Models
                 LastName = values[2],
                 Email = values[3],
                 Gender = values[4],
-                DateOfBirth = DateTime.Parse(values[5]),
-                Issued = DateTime.Parse(values[6]),
-                Expiry = DateTime.Parse(values[7]),
+                DateOfBirth = values[5],
+                Issued = values[6],
+                Expiry = values[7],
                 LicenseId = values[8],
                 Address = values[9],
             };
