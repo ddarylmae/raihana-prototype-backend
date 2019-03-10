@@ -26,6 +26,16 @@ namespace raihana
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("SpecificOrigins",
+                builder =>
+                {
+                    builder.WithOrigins(
+                        "https://waltzaround.github.io/Raihana-prototype/",
+                        "https://localhost:8080/",);
+                });
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
             // Add S3 to the ASP.NET Core dependency injection framework.
@@ -46,6 +56,10 @@ namespace raihana
                 app.UseHsts();
             }
 
+            app.UseCors(builder =>  builder
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+            );
             app.UseHttpsRedirection();
             app.UseMvc();
         }
