@@ -15,6 +15,7 @@ namespace raihana.Models
         public string Address { get; set; }
         public string Issued { get; set; }
         public string Expiry { get; set; }
+        public string ProfileImage { get; set; }
 
         public static License FromCsv(string csvLine)
         {
@@ -31,6 +32,7 @@ namespace raihana.Models
                 Expiry = values[7],
                 LicenseId = values[8],
                 Address = values[9],
+                ProfileImage = values[10],
             };
         }
     }

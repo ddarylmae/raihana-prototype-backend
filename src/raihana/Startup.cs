@@ -33,7 +33,7 @@ namespace raihana
                 {
                     builder.WithOrigins(
                         "https://waltzaround.github.io/Raihana-prototype/",
-                        "https://localhost:8080/",);
+                        "https://localhost:8080/");
                 });
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
